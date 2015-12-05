@@ -1,4 +1,28 @@
 ---
+- name: install ruby
+  yum: name=ruby state=present
+  tags:
+    - ruby
+    - packages
+
+- name: install ruby-devel
+  yum: name=ruby-devel state=present
+  tags:
+    - ruby
+    - packages
+
+- name: install bundler
+  yum: name=rubygem-bundler
+  tags:
+    - ruby
+    - packages
+
+- name: install rubygem rpms
+  yum: name={{ item }} state=present
+  with_items: ruby_rubygem_rpms
+  tags:
+    - ruby
+    - packages
 
 - name: install passenger
   include: passenger.yml

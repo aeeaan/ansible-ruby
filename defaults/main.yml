@@ -1,3 +1,4 @@
 ---
 # defaults file for correcthorse.ruby
+ruby_rubygems_rpms: []
 ruby_install_passenger: true
