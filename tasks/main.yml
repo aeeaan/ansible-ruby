@@ -1,2 +1,5 @@
 ---
-# tasks file for correcthorse.ruby
+
+- name: install passenger
+  include: passenger.yml
+  when: ruby_install_passenger == true

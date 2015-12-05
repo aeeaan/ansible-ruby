@@ -1,2 +1,3 @@
 ---
-# vars file for correcthorse.ruby
+common_development_tools: true
+mysql_install_devel: true

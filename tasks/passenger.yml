@@ -1,0 +1,29 @@
+---
+- name: install packagecloud rpm key
+  rpm_key: key=https://packagecloud.io/gpg.key state=present
+  tags:
+    - repos
+    - packages
+
+- name: install passenger repo
+  template: src=el-passenger.repo.j2 dest=/etc/yum.repos.d/el-passenger.repo owner=root group=root mode=0644
+  register: passenger_repo
+  tags:
+    - repos
+    - packages
+
+- name: accept key and update cache
+  command: yum -q makecache -y
+  when: passenger_repo|changed
+  tags:
+    - repos
+    - packages
+
+- name: install mod_passenger
+  yum: name=mod_passenger state=present
+  tags:
+    - ruby
+    - passenger
+    - httpd
+    - packages
+  
