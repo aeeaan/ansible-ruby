@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Joshua Rusch
+  description: 
+  company: 
+  license: MIT
+  min_ansible_version: 1.9.2
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  categories:
+  - development
+  - web
+dependencies: []
+  
