@@ -19,7 +19,7 @@
 
 - name: install rubygem rpms
   yum: name={{ item }} state=present
-  with_items: ruby_rubygem_rpms
+  with_items: "{{ ruby_rubygem_rpms }}"
   tags:
     - ruby
     - packages
